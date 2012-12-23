@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function getParam(){
+getParam (){
 	local tmp=$(echo "&$1" | sed -n "s/.*&$2=\([^&]*\).*/\1/gp")
 	if [ "$3" -eq "1" ]
 	then
