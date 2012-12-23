@@ -1,0 +1,18 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-1.8.2.min.js" ></script>
+</head>
+<body>
+<script type="text/javascript">
+function setColor(col)
+{
+    var deccol = eval('['+'0x'+col.substr(0,2)+','+'0x'+col.substr(2,2)+','+'0x'+col.substr(4,2)+']');
+    console.log("setColor: "+col+" "+deccol);
+    $.get('/cgi-bin/setcolor.sh?color='+deccol, function(data) { });
+}
+window.setColor = setColor;
+</script>
+<iframe src="ColorEditor.html" width="410" height="550" scrolling="no" target="_parent" scrollbars="no">
+</iframe>
+</body>
+</html>
